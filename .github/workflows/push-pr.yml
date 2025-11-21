@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - main
+      - "release/**"
+    paths: 
+       - "src/**"
+       - "test/**"
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: uubunto-latest
+    steps:
+      - name: chckoutcode
+        uses: actions/checkout@v6.0.0
+
+      - name: run tests
+      - run: npm test 
+ 
